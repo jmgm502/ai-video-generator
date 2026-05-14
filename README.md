@@ -1,5 +1,13 @@
 # AI Video Generator（星梦动画）
 
+## 语言 / Languages / 言語
+
+- [中文 (Chinese)](README.md)
+- [English](README.en.md)
+- [日本語 (Japanese)](README.ja.md)
+
+---
+
 一款基于 **Vue 3 + TypeScript + Vite + Electron** 构建的桌面端 AI 画布工坊，支持通过节点化画布完成文本、图片、视频等多模态内容的生成、串联与管理，适合用于 AIGC 创作、分镜编排与视频生成工作流搭建。
 
 ## 项目简介
