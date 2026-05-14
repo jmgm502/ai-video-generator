@@ -46,10 +46,12 @@ coverage/
 *.sln
 
 # =========================
-# External projects
+# External projects / other
 # =========================
 X-tapnow-main/
 vue-flow-master/
+server/
+spec/
 
 # =========================
 # Scripts (keep these!)
