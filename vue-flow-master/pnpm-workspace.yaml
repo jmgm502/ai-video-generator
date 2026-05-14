@@ -1,6 +1,0 @@
-packages:
-  - packages/*
-  - tooling/*
-  - examples/*
-  - tests
-  - docs

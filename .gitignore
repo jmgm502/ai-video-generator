@@ -32,6 +32,8 @@ coverage/
 # =========================
 # Editor / IDE
 # =========================
+.trae/
+.vs/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
@@ -42,6 +44,18 @@ coverage/
 *.ntvs*
 *.njsproj
 *.sln
+
+# =========================
+# External projects
+# =========================
+X-tapnow-main/
+vue-flow-master/
+
+# =========================
+# Scripts
+# =========================
+scripts/
+
 
 # Cursor project/runtime files
 .cursor/
