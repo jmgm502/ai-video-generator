@@ -1,0 +1,12 @@
+<script lang="ts">
+export default {
+  name: 'ControlButton',
+  compatConfig: { MODE: 3 },
+}
+</script>
+
+<template>
+  <button type="button" class="vue-flow__controls-button">
+    <slot />
+  </button>
+</template>

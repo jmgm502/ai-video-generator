@@ -1,0 +1,75 @@
+==========================================
+  Flow2API 集成使用说明
+==========================================
+
+📦 一、环境要求
+
+1. 必须安装：
+   - Python 3.8 或更高版本
+   - 下载地址：https://www.python.org/downloads/
+   - ⚠️ 安装时务必勾选 "Add Python to PATH"
+
+2. 推荐安装：
+   - Chrome 或 Edge 浏览器（用于验证码处理）
+
+🔧 二、安装步骤
+
+方式一：自动安装（推荐）
+1. 双击运行 flow2api-main\install.bat
+2. 等待安装完成
+
+方式二：手动安装
+1. 进入 flow2api-main 目录
+2. 创建虚拟环境：python -m venv venv
+3. 激活虚拟环境：venv\Scripts\activate
+4. 安装依赖：pip install -r requirements.txt
+5. 安装浏览器：playwright install chromium
+6. 复制配置：复制 config\setting_example.toml 为 config\setting.toml
+
+🚀 三、启动使用
+
+1. 直接启动你的星梦动画软件
+2. Flow2API 会自动在后台启动
+3. 首次启动可能需要几秒钟
+
+⚙️ 四、配置说明
+
+1. 在星梦动画软件中：
+   - 打开设置 → API 设置
+   - 选择 "Flow2" 标签
+   - API 地址：http://localhost:8000
+   - API Key：XINGMENG2026（默认，可在 setting.toml 中修改）
+
+2. Flow2API 管理后台：
+   - 浏览器访问：http://localhost:8000
+   - 用户名：admin
+   - 密码：admin（首次登录请修改）
+   - 在后台可以添加 Flow Token
+3.浏览器中配置使用插件 Flow2API-Token-Updater-main
+   - 使用谷歌浏览器找到扩展程序，开启开发者模式
+   - 将 Flow2API-Token-Updater-main 直接拖入扩展程序页面内，并开启
+   - http://localhost:8000 中点击系统配置
+   - 把插件连接配置中的接口和链接token配置到 插件中保存
+   - 点击浏览器的插件中的立即测试，并查看日志是否链接正确
+   - 需要自行打开 https://labs.google/fx/vi/tools/flow 进行谷歌账号登录
+   - 如果链接不上请科学上网
+   - 返回后台的token管理中看是否已经读取到账号
+4. 在模型设置中：
+   - 图片生成 → 模型组选择 "Flow2"
+   - 视频生成 → 模型组选择 "Flow2"
+5. 开始使用
+
+📝 五、常见问题
+
+Q: 启动时提示找不到 Python？
+A: 请重新安装 Python，并确保勾选 "Add Python to PATH"
+
+Q: 依赖安装失败？
+A: 尝试使用国内镜像源：
+   pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+Q: Flow2API 启动失败？
+A: 检查 8000 端口是否被占用，或修改 config/setting.toml 中的端口
+
+Q: 生成失败？
+A: 请先在 Flow2API 管理后台添加有效的 Flow Token

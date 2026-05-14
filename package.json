@@ -1,0 +1,138 @@
+{
+  "name": "ai-video-generator",
+  "version": "1.2.9",
+  "description": "AI视频生成桌面软件 - 分镜视频生成器",
+  "main": "./dist-electron/main.js",
+  "author": "清心",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/clean-tmp.js && electron-builder",
+    "build:mac": "vite build && node scripts/clean-tmp.js && electron-builder --mac",
+    "build:vite": "vue-tsc --noEmit && vite build",
+    "build:skip-typecheck": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "vite",
+    "electron:build": "vite build && node scripts/clean-tmp.js && electron-builder",
+    "build:upload": "node scripts/build-and-upload.js",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "format": "prettier --write src/",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "clean:tmp": "node scripts/clean-tmp.js"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@excalidraw/excalidraw": "^0.18.0",
+    "@tabler/icons-vue": "^3.41.1",
+    "@tresjs/cientos": "^5.7.0",
+    "@tresjs/core": "^5.8.0",
+    "@vue-flow/background": "^1.3.2",
+    "@vue-flow/controls": "^1.1.3",
+    "@vue-flow/core": "^1.48.2",
+    "@vue-flow/minimap": "^1.5.4",
+    "@vueuse/core": "^10.9.0",
+    "adm-zip": "^0.5.17",
+    "ali-oss": "^6.23.0",
+    "axios": "^1.6.7",
+    "electron-log": "^5.4.3",
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.7",
+    "element-plus": "^2.6.1",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.184.0",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.14.4",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.18",
+    "concurrently": "^8.2.2",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.22.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vite-plugin-electron": "^0.28.4",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vue-tsc": "^2.0.6",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.ai-video-generator.app",
+    "productName": "星梦动画",
+    "directories": {
+      "output": "release"
+    },
+    "asar": false,
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*",
+      "public/icon.ico",
+      "version.json",
+      "update-logs.json",
+      {
+        "from": "flow2api-main",
+        "to": "resources/flow2api-main",
+        "filter": [
+          "**/*",
+          "!node_modules/**",
+          "!venv/**",
+          "!.git/**",
+          "!release/**",
+          "!*.log",
+          "!tmp/**",
+          "!**/__pycache__/**",
+          "!**/*.pyc",
+          "!**/.DS_Store",
+          "!**/Thumbs.db",
+          "!**/browser_profile*/**",
+          "!**/launch_retry_profile*/**"
+        ]
+      }
+    ],
+    "extraResources": [
+      {
+        "from": "resources/upscayl",
+        "to": "upscayl",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "public/models",
+        "to": "models",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "fileAssociations": [],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "${productName}-${version}-setup.${ext}",
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
