@@ -56,6 +56,12 @@ vue-flow-master/
 # =========================
 scripts/
 
+# =========================
+# Documentation / API files
+# =========================
+*.apifox.json
+相关命令.md
+
 
 # Cursor project/runtime files
 .cursor/
