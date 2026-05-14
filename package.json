@@ -133,6 +133,14 @@
       "oneClick": false,
       "perMachine": true,
       "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "artifactName": "${productName}-${version}-mac.${ext}",
+      "icon": "public/icon.ico"
     }
   }
 }

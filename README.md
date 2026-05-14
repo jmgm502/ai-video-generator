@@ -125,6 +125,31 @@ Windows 安装包会输出到 `release/` 目录。
 - 真实 API 密钥、账号信息不要公开
 - 若某些模型在当前渠道不可用，请切换到支持的模型或渠道
 
+## 支持
+
+如果你觉得这个项目对你有帮助，考虑请我吃点辣的零食（辣条）作为感谢~ 🌶️🍥
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/wechat-donate.png" alt="微信赞赏" width="200">
+      <br>
+      <p>要到饭吗？啊啊？啊啊？不给也没事~ 请随意打赏</p>
+    </td>
+    <td align="center">
+      <img src="assets/alipay-donate.png" alt="支付宝赞赏" width="200">
+      <br>
+      <p>夏天爱吃菠萝大西瓜</p>
+      <p>如果觉得有帮助,来包辣条犒劳一下吧~</p>
+    </td>
+    <td align="center">
+      <img src="assets/wechat-group.png" alt="WeChat" width="200">
+      <br>
+      <p>二维码7天内(3月6日前)有效，过期请加微信或者公众号“煎饼果子卷AI”</p>
+    </td>
+  </tr>
+</table>
+
 ## 许可证
 
 本项目采用 **GNU General Public License v3.0 (GPL-3.0)** 许可证。
