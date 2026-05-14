@@ -145,7 +145,7 @@ Windows 安装包会输出到 `release/` 目录。
     <td align="center">
       <img src="assets/wechat-group.png" alt="WeChat" width="200">
       <br>
-      <p>二维码7天内(3月6日前)有效，过期请加微信或者公众号“煎饼果子卷AI”</p>
+      <p>二维码7天内有效，过期请加微信或者公众号“清心云科技”</p>
     </td>
   </tr>
 </table>
@@ -172,4 +172,4 @@ https://www.gnu.org/licenses/gpl-3.0.html
 
 ## 作者
 
-清心
+清心 QQ 82413405
