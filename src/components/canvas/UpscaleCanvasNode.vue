@@ -106,9 +106,6 @@ const modelDisplayNameMap: Record<string, { zh: string; en: string }> = {
   'upscayl-standard-4x': { zh: '通用标准模型', en: 'Upscayl Standard 4x' },
   'upscayl-lite-4x': { zh: '轻量快速模型', en: 'Upscayl Lite 4x' },
   'high-fidelity-4x': { zh: '高保真模型', en: 'High Fidelity 4x' },
-  'remacri-4x': { zh: '锐化增强模型', en: 'Remacri 4x' },
-  'ultramix-balanced-4x': { zh: '平衡混合模型', en: 'Ultramix Balanced 4x' },
-  'ultrasharp-4x': { zh: '超锐利模型', en: 'Ultrasharp 4x' },
   'digital-art-4x': { zh: '数字艺术/动漫模型', en: 'Digital Art 4x' }
 }
 
@@ -409,10 +406,11 @@ onUnmounted(() => {
                   v-for="model in availableModels"
                   :key="model.id"
                   type="button"
-                  class="model-radio-item"
+                  class="model-radio-item nodrag nopan"
                   :class="{ active: props.data.selectedModel === model.id }"
                   :disabled="processing"
                   @click="updateNodeData({ selectedModel: model.id })"
+                  @mousedown.stop
                 >
                   <span class="model-radio-dot" />
                   <div class="model-option">
@@ -477,6 +475,8 @@ onUnmounted(() => {
                         :model-value="props.data.ttaMode"
                         :disabled="processing"
                         @change="(val: boolean) => updateNodeData({ ttaMode: val })"
+                        class="nodrag nopan"
+                        @mousedown.stop
                       />
                       <span class="setting-hint">{{ t('upscale.ttaHint') || '提高质量但速度较慢' }}</span>
                     </div>
@@ -484,7 +484,8 @@ onUnmounted(() => {
                       type="primary"
                       :disabled="!props.data.inputImagePath || processing"
                       @click="handleStartUpscale"
-                      class="start-btn start-btn--inline"
+                      class="start-btn start-btn--inline nodrag nopan"
+                      @mousedown.stop
                     >
                       {{ props.data.status === 'completed' ? (t('upscale.reprocess') || '重新处理') : (t('upscale.startUpscale') || '开始超分辨率') }}
                     </el-button>
@@ -493,7 +494,8 @@ onUnmounted(() => {
                       type="success"
                       :icon="Download"
                       @click="handleSaveOutputImage"
-                      class="save-btn save-btn--inline"
+                      class="save-btn save-btn--inline nodrag nopan"
+                      @mousedown.stop
                     >
                       {{ t('upscale.saveImage') || '保存图片' }}
                     </el-button>
@@ -521,7 +523,8 @@ onUnmounted(() => {
             size="small"
             :icon="Close"
             @click="handleStopUpscale"
-            class="stop-btn"
+            class="stop-btn nodrag nopan"
+            @mousedown.stop
           >
             {{ t('upscale.stopProcessing') || '停止处理' }}
           </el-button>
@@ -535,7 +538,8 @@ onUnmounted(() => {
               :icon="Upload"
               @click="handleSelectInputImage"
               :disabled="processing"
-              class="upload-btn"
+              class="upload-btn nodrag nopan"
+              @mousedown.stop
             >
               <span>{{ t('upscale.selectImage') || '选择图片' }}</span>
             </el-button>
@@ -547,6 +551,7 @@ onUnmounted(() => {
                   class="replace-image-btn nodrag nopan"
                   :disabled="processing"
                   @click="handleSelectInputImage"
+                  @mousedown.stop
                 >
                   <el-icon class="replace-image-icon"><Upload /></el-icon>
                   <span>重新上传</span>
@@ -835,7 +840,7 @@ onUnmounted(() => {
   align-items: flex-start;
   gap: 10px;
   width: 100%;
-  padding: 4px 12px;
+  padding: 12px 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.03);

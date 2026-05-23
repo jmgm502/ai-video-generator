@@ -28,9 +28,6 @@ export const UPSCALE_MODELS: UpscaleModel[] = [
   { id: 'upscayl-standard-4x', name: 'Upscayl Standard 4x', description: '通用标准模型', scale: '4' },
   { id: 'upscayl-lite-4x', name: 'Upscayl Lite 4x', description: '轻量快速模型', scale: '4' },
   { id: 'high-fidelity-4x', name: 'High Fidelity 4x', description: '高保真模型', scale: '4' },
-  { id: 'remacri-4x', name: 'Remacri 4x', description: '锐化增强模型', scale: '4' },
-  { id: 'ultramix-balanced-4x', name: 'Ultramix Balanced 4x', description: '平衡混合模型', scale: '4' },
-  { id: 'ultrasharp-4x', name: 'Ultrasharp 4x', description: '超锐利模型', scale: '4' },
   { id: 'digital-art-4x', name: 'Digital Art 4x', description: '数字艺术/动漫模型', scale: '4' },
 ]
 
